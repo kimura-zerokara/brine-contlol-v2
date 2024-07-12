@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブライン濃度調整計算</title>
+</head>
+<body>
+    <h1>ブライン濃度調整計算</h1>
+    <div>
+        <label for="temp">ブライン温度 (℃): </label>
+        <input type="text" id="temp">
+    </div>
+    <div>
+        <label for="density">濃度 (%): </label>
+        <input type="text" id="density">
+    </div>
+    <div>
+        <label for="level">水位 (cm): </label>
+        <input type="text" id="level">
+    </div>
+    <button onclick="calculate()">計算する</button>
+    <h2>結果</h2>
+    <div>
+        <label for="result1">結果1: </label>
+        <input type="text" id="result1" readonly>
+    </div>
+    <div>
+        <label for="result2">結果2: </label>
+        <input type="text" id="result2" readonly>
+    </div>
+    <!-- 他の結果フィールドもここに追加 -->
+    <script>
+        function calculate() {
+            let temp = parseFloat(document.getElementById('temp').value);
+            let density = parseFloat(document.getElementById('density').value);
+            let level = parseFloat(document.getElementById('level').value);
+
+            // 仮の計算ロジック（実際のロジックはExcelの計算に基づく）
+            let result1 = temp + density + level;  // 例
+            let result2 = temp * density;  // 例
+
+            document.getElementById('result1').value = result1;
+            document.getElementById('result2').value = result2;
+            // 他の結果フィールドもここで設定
+        }
+    </script>
+</body>
+</html>
